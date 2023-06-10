@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Movies</title>
+        <link rel="stylesheet" href="styles.css"> 
+        
+        <script href="sandbox.js" defer></script>
+        <script>
+            const API_KEY = 'api_key=6cf755d5d87301b88bff14ba7e2c697c'
+            const BASE_URL = 'https://api.themoviedb.org/3'
+            const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+            const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+            const Search_URL = BASE_URL + '/search/movie?' + API_KEY;
+            const main=document.getElementById('movie');
+            function getMovies(url){
+            fetch(url).then(res => res.json()).then(data=>{
+                console.log(data.results);
+                showmovies(data.results);
+             })
+}
+        </script>
+    </head>
+    <body>
+        <hr>
+        <section class="logo">
+            
+            <img src="img/movies logo.jpg" /> 
+        
+            <form>
+                <input type="text" name="search" class="logo movie" id="search"
+                placeholder="search something" width="160px" height="30px"/>
+            
+            
+                <input class="logo movie" type="submit" width="57px" height="30px"/>
+            </form>
+        </section>
+        <hr>
+        <article class="make">
+            <ul class="list" >
+                <li>Search Results</li>
+                <li>All Team</li>
+                <li>Core</li>
+                <li>Developers</li>
+                <li>Designers</li>
+                <li>Mentors</li>
+            </ul>
+        </article>
+        <section class="grid-container make" >
+            <div id="content">
+                <img src="img/john.jpg" width="128px" height="192px"/>
+                <img src="img/mario.jpg" width="128px" height="192px"/>
+                <img src="img/fast x.jpg" width="128px" height="192px"/>
+                <img src="img/spiderman.jpg" width="128px" height="192px"/>
+                <img src="img/blodhounds.jpg" width="128px" height="192px"/>
+                <img src="img/avatar.jpg" width="128px" height="192px"/>
+                
+                
+            </div>
+        </section>
+        
+    </body>
+</html>
