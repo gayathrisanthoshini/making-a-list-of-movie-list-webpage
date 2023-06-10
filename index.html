@@ -3,7 +3,68 @@
     <head>
         <meta charset="UTF-8">
         <title>Movies</title>
-        <link rel="stylesheet" href="styles.css"> 
+        <!-- <link rel="stylesheet" href="styles.css">  -->
+        <style>
+            *{
+    background-color:white;
+    box-sizing: border-box;
+    /* width: 960px; 
+    width:100%; */
+}
+.logo{
+   display:flex;
+   justify-content: space-between;
+} 
+.movie{
+    display:flex;
+}
+form {
+    display: flex;
+    padding:0px;
+}
+ul li{
+    padding:10px;
+    list-style-type: none;
+    font-size: larger;
+    font-weight: bold;
+}
+ul li:first-child{
+    border:2px solid gray;
+}
+#content{
+    display: grid;
+    justify-content: start;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:10px;
+    max-width:960px;
+    margin:0 auto;
+     
+
+}
+#content div{
+    background:#3bbced;
+    padding:30px;
+}
+.make{
+    display: flex;
+}
+#content img:hover{
+    position: relative;
+    transform: translate(5px,-5px);
+    cursor:pointer;
+}
+.list li:hover{
+    border:1px solid slategray;
+}
+.add{
+    padding:10px;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+        </style>
         
         <script href="sandbox.js" defer></script>
         <script>
@@ -44,6 +105,7 @@
                 <li>Developers</li>
                 <li>Designers</li>
                 <li>Mentors</li>
+                <li class="add">+Add</li>
             </ul>
         </article>
         <section class="grid-container make" >
